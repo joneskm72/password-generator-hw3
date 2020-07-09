@@ -1,6 +1,9 @@
 var minLength = 8;
 var maxLength = 128;
 var specialCharacters = " !#$%&'()*+,-./:;<=>?@[]^_{|}~"
+var lowerCharacters = "abcdefghijklmnopqrstuvwxyz";
+var upperCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numberCharacters = "0123456789";
 
 function generatePassword() {
     var length = prompt("How many characters?");
@@ -13,7 +16,7 @@ function generatePassword() {
         var special = confirm("Would you like special characters?");
         var numbers = confirm("Would you like numerical characters?");
 
-    while(lower != true && upper != true && special != true) {
+    while(lower != true && upper != true && special != true && numbers != true) {
         alert("Please select at least one character type.");
         var lower = confirm("Would you like lowercase characters?");
         var upper = confirm("Would you like uppercase characters?");
@@ -21,10 +24,30 @@ function generatePassword() {
         var numbers = confirm("Would you like numerical characters?");
     }
 
+    var allPossibleCharacters = "";
+
+    if(lower) {
+        allPossibleCharacters += lowerCharacters;
+    }
+
+    if(upper) {
+        allPossibleCharacters += upperCharacters;
+    }
+
+    if(numbers) {
+        allPossibleCharacters += numberCharacters;
+    }
+
+    if(special) {
+        allPossibleCharacters += specialCharacters;
+    }
+
     var generatedPassword = "";
     for (var i = 0; i < length; i++) {
-        ... // here you can use i
+        var index = Math.floor(Math.random() * allPossibleCharacters.length);
+        var character = allPossibleCharacters[index];
+        generatedPassword += character;
     }
-    alert(generatedPassword);
+    
     document.getElementById("passwordBox").innerHTML = generatedPassword;
 }
