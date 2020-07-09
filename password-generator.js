@@ -1,6 +1,6 @@
 var minLength = 8;
 var maxLength = 128;
-var specialCharacters = " !#$%&'()*+,-./:;<=>?@[]^_{|}~"
+var specialCharacters = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
 var lowerCharacters = "abcdefghijklmnopqrstuvwxyz";
 var upperCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numberCharacters = "0123456789";
@@ -48,6 +48,8 @@ function generatePassword() {
         var character = allPossibleCharacters[index];
         generatedPassword += character;
     }
-    
-    document.getElementById("passwordBox").innerHTML = generatedPassword;
+   
+    var passwordBox = document.getElementById("passwordBox");
+    passwordBox.innerHTML = ""; 
+    passwordBox.appendChild(document.createTextNode(generatedPassword));
 }
