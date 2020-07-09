@@ -21,6 +21,10 @@ function generatePassword() {
         var numbers = confirm("Would you like numerical characters?");
     }
 
-    var generatedPassword = "passw0rd";
+    var generatedPassword = "";
+    for (var i = 0; i < length; i++) {
+        ... // here you can use i
+    }
+    alert(generatedPassword);
     document.getElementById("passwordBox").innerHTML = generatedPassword;
 }
