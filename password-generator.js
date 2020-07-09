@@ -1,4 +1,3 @@
-
 var minLength = 8;
 var maxLength = 128;
 var specialCharacters = " !#$%&'()*+,-./:;<=>?@[]^_{|}~"
@@ -22,7 +21,6 @@ function generatePassword() {
         var numbers = confirm("Would you like numerical characters?");
     }
 
-    var generatedPasssword = "passw0rd";
-
-    alert(generatedPassword);
+    var generatedPassword = "passw0rd";
+    document.getElementById("passwordBox").innerHTML = generatedPassword;
 }
