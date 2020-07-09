@@ -21,4 +21,8 @@ function generatePassword() {
         var special = confirm("Would you like special characters?");
         var numbers = confirm("Would you like numerical characters?");
     }
+
+    var generatedPasssword = "passw0rd";
+
+    alert(generatedPassword);
 }
