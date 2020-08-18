@@ -11,6 +11,8 @@ SO THAT I can create a strong password that provides greater security
 ```
 <img src="Assets/password generator.png" width="400">
 
+<img src="Assets/password-generator2.png" width="400">
+
 ## Technologies Used:
 
 HTML, CSS, and JavaScript
